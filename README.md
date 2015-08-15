@@ -50,6 +50,7 @@ plugins=(brew brew-cask osx sublime)
 # ...
 alias bu='brew update && brew upgrade --all && brew linkapps && brew cleanup --force -s'
 alias bcu='brew cask update && brew cask install $(brew cask list) && brew cask cleanup'
+alias reset-launchpad='rm ~/Library/Application\ Support/Dock/*.db && defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock'
 ```
 
 ## Development
@@ -90,8 +91,6 @@ Edit user settings:
 	"theme": "Soda Light 3.sublime-theme"
 }
 ```
-
-Install `Inspired GitHub Color Scheme` and use it.
 
 ### Python
 
@@ -178,3 +177,4 @@ gem install scss_lint
 ```
 
 In Sublime Text, install `SCSS`, `SublimeLinter-contrib-scss-lint`.
+

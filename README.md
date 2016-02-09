@@ -12,8 +12,8 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 Add the following lines to the **beginning** of `/etc/paths`:
 
-	/usr/local/bin
-	/usr/local/sbin
+    /usr/local/bin
+    /usr/local/sbin
 
 Add taps:
 ```bash
@@ -53,6 +53,14 @@ Install git:
 ```bash
 brew install git
 ```
+
+### Visual Studio Code
+
+[Download](https://code.visualstudio.com/Download) and install Visual Studio Code.
+
+### Atom
+
+[Download](https://atom.io/download/dmg) and install Atom.
 
 ### Python
 

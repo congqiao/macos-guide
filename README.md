@@ -1,4 +1,4 @@
-# Getting Started with OS X
+# Getting Started with macOS
 
 ## Essentials
 

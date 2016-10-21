@@ -12,13 +12,8 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 Add the following lines to the **beginning** of `/etc/paths`:
 
-    /usr/local/bin
     /usr/local/sbin
-
-Add taps:
-```bash
-brew tap homebrew/dupes
-```
+    /usr/local/bin
 
 ### Z shell
 
@@ -31,7 +26,7 @@ brew install zsh
 Install [Oh-My-Zsh](http://ohmyz.sh/):
 
 ```bash
-$ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 ```
 
 Edit `~/.zshrc`:
@@ -40,8 +35,19 @@ Edit `~/.zshrc`:
 # ...
 plugins=(brew osx)
 # ...
-alias bu='brew update && brew upgrade --all && brew linkapps && brew cleanup --force -s'
-alias reset-launchpad='rm ~/Library/Application\ Support/Dock/*.db && defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock'
+alias bu='brew update && brew upgrade && brew linkapps && brew cleanup --force -s'
+alias reset-launchpad='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock'
+alias purge-ds-store='sudo find / -name .DS_Store -delete && killall Finder'
+```
+
+Add the following line to the end of `/etc/shells`:
+
+    /usr/local/bin/zsh
+
+Change your shell:
+
+```bash
+chsh -s /usr/local/bin/zsh
 ```
 
 ## Development
@@ -58,10 +64,6 @@ brew install git
 
 [Download](https://code.visualstudio.com/Download) and install Visual Studio Code.
 
-### Atom
-
-[Download](https://atom.io/download/dmg) and install Atom.
-
 ### Python
 
 Install Python:
@@ -76,52 +78,10 @@ or if you absolutely need to use the old Python 2:
 brew install python
 ```
 
-Install `pep8`:
-```bash
-pip3 install pep8
-```
-
-### Ruby
-
-Install [rbenv](https://github.com/sstephenson/rbenv):
-
-```bash
-brew install rbenv ruby-build
-```
-
-Add the following lines to `~/.zprofile`:
-
-```bash
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-```
-
-Install a Ruby version:
-
-```bash
-rbenv install -l
-rbenv install $SOME_VERSION
-rbenv rehash
-rbenv global $SOME_VERSION
-```
-
-Install [rubocop](https://github.com/bbatsov/rubocop):
-
-```bash
-gem install rubocop
-rbenv rehash
-```
-
 ### JavaScript
 
 Install [Node.js](https://nodejs.org/):
 
 ```bash
 brew install node
-```
-
-Install [eslint](http://eslint.org/):
-
-```bash
-npm install -g eslint eslint-plugin-react
 ```

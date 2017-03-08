@@ -35,7 +35,7 @@ Edit `~/.zshrc`:
 # ...
 plugins=(brew osx)
 # ...
-alias bu='brew update && brew upgrade && brew linkapps && brew cleanup --force -s'
+alias bu='brew update && brew upgrade && brew cleanup -s && brew prune'
 alias reset-launchpad='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock'
 alias purge-ds-store='sudo find / -name .DS_Store -delete && killall Finder'
 ```
@@ -84,4 +84,10 @@ Install [Node.js](https://nodejs.org/):
 
 ```bash
 brew install node
+```
+
+Install [Yarn](https://yarnpkg.com/):
+
+```bash
+brew install yarn
 ```
